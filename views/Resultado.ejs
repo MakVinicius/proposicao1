@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Verificação da Proposição</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <h1>Proposição 1</h1>
+        <p>Prove que para qualquer inteino n, o número 
+            3(n² + 2n + 3) - 2n²
+            é um quadrado perfeito.<br />
+        
+            Quadrado perfeito é todo número que possui uma raiz quadrada inteira.</p>
+
+        <form action="/" method="post">
+            <div class="total">
+                <div class="doisInputs">
+                    <div class="ladoEsquerdo">
+                        <h2>Limite Inferior</h2>
+                        <input name="limiteInf" class="inputBox" type="number">
+                    </div>
+    
+                    <div class="ladoDireito">
+                        <h2>Limite Superior</h2>
+                        <input name="limiteSup" class="inputBox" type="number">
+                    </div>
+                </div>
+                
+
+                <button type="submit" class="button">Calcular</button>
+            </div>
+        </form>
+
+        <table class="resultTable">
+            <tr>
+                <th>n</th>
+                <th>Fórmula</th>
+                <th>Raiz</th>
+                <th>Resto</th>
+                <th>Avaliação</th>
+            </tr>
+
+
+            <% for (let j = 0; j < comprimentoJS; j++) { %>
+                <tr>
+                    <td><%= numeroJS[j] %></td>
+                    <td><%= formulaJS[j] %></td>
+                    <td><%= (Math.round(raizQuadradaJS[j] * 100) / 100).toFixed(2) %></td>
+                    <td><%= (Math.round(decimalJS[j] * 100) / 100).toFixed(2) %></td>
+                    <td><%= avaliacaoJS[j] %></td>
+                </tr>
+            <% } %>
+
+        </table>
+        
+        <p class="finalMessage"><%= messageJS %></p>
+
+    </body>
+
+</html>
